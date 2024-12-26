@@ -25,6 +25,16 @@ function getnName() {
 }
 
 function App() {
+
+  // {/**Event handling e*/}
+  // const handleClick = (e) => {console.log('clicked',e)};
+
+  // {/**Event handling name*/}
+  // const handleClick = (name) => {console.log('clicked',name)};
+
+  {/**Event handling name and e*/}
+  const handleClick = (name, e) => {console.log('clicked',name, e)};
+  
   return (
     <div className="App">
       this is app
@@ -52,6 +62,13 @@ function App() {
 
       {/**Conditional rendering using function */}
       {getArticleTem()}
+
+    
+        <div className= "App">
+        <button onClick={(e) => handleClick('ekko',e)}>Click me</button>
+        </div>
+   
+
 
 
     </div>
