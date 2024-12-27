@@ -3,6 +3,7 @@
 //直接替换状态会导致组件不会重新渲染(引发视图的更新)，因为react无法检测到状态的变化。
 
 import {useState}from 'react';
+import './index.css';
 
 const count = 100;
 const list=[
@@ -42,6 +43,9 @@ function getnName() {
   return 'John Doe';
 }
 
+  //1.10.3 行内样式控制
+  const style = { color: 'red', fontSize: '50px' };
+
 function App() {
 
   // {/**Event handling e*/}
@@ -67,8 +71,9 @@ function App() {
     //正确写法
     setForm({
       name: 'Jack'
-  }
-  )}
+  })
+
+}
   
   
   return (
@@ -116,13 +121,15 @@ function App() {
         <button onClick={handleClick}>{count}</button>
         <button onClick={changeForm}>修改form{form.name}</button>
 
+        {} 
+        <span style={style}>this is red</span>
+        <div>
+        <span className="foo">this is class foo improt from index.css</span>
+        </div>
+
+
         
-
-
    
-
-
-
     </div>
     
   );
